@@ -7,3 +7,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+@layer utilities {
+  .font-allura {
+    font-family: 'Allura', cursive;
+  }
+}

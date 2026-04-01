@@ -15,6 +15,7 @@ export default {
         ],
         // Можно добавить отдельно для акцентов, если нужно
         montserrat: ['Montserrat', 'sans-serif'],
+        allura: ['Allura', 'cursive'],
       },
     },
   },
