@@ -14,7 +14,7 @@ export const NavMenu = () => {
         ABOUT
       </a>
       <a
-        href="#"
+        href="#best_section"
         className="p-4 text-[12px] font-medium text-gray-800 transition-colors rounded-xl hover:bg-pink-50 hover:text-red-700"
       >
         BEST

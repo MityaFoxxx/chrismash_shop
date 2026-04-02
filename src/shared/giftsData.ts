@@ -1,4 +1,13 @@
-export const giftsData = [
+type CardTab = 'for work' | 'for health' | 'for harmony';
+export interface Gift {
+  id: number;
+  tab: CardTab;
+  title: string;
+  imgUrl: string;
+}
+
+type GiftsData = Gift[];
+export const giftsDataList: GiftsData = [
   {
     id: 1,
     tab: 'for work',
@@ -21,7 +30,7 @@ export const giftsData = [
     id: 4,
     tab: 'for work',
     title: 'shortcut cheater',
-    imgUrl: '/gift_ball_.svg',
+    imgUrl: '/gift_ball_1.svg',
   },
   {
     id: 5,
@@ -64,6 +73,39 @@ export const giftsData = [
     tab: 'for harmony',
     title: 'Joy Charger',
     imgUrl: '/gift_ball_3.svg',
+  },
+  {
+    id: 12,
+    tab: 'for harmony',
+    title: 'Spontaneous Coding Philosopher',
+    imgUrl: '/gift_ball_3.svg',
+  },
+];
+
+export const tabColors = {
+  'for health': '#06A44F',
+  'for harmony': '#FF43F7',
+  'for work': '#4361FF',
+};
+
+export const giftsDataUI: GiftsData = [
+  {
+    id: 1,
+    tab: 'for work',
+    title: 'console.log guru',
+    imgUrl: '/gift_ball_1.svg',
+  },
+  {
+    id: 9,
+    tab: 'for health',
+    title: 'Hydration Bot',
+    imgUrl: '/gift_ball_2.svg',
+  },
+  {
+    id: 10,
+    tab: 'for work',
+    title: 'Merge Master',
+    imgUrl: '/gift_ball_1.svg',
   },
   {
     id: 12,

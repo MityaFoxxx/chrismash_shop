@@ -73,8 +73,9 @@ export const BurgerMenu = ({ isMenuOpen, toggleMenu }: BurgerMenuProps) => {
             ABOUT
           </a>
           <a
-            href="#"
+            href="#best_section"
             className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors border-b border-gray-100 hover:text-blue-600"
+            onClick={() => toggleMenu()}
           >
             BEST
           </a>
