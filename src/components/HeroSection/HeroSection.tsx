@@ -1,6 +1,6 @@
 export const HeroSection = () => {
   return (
-    <section className="relative bg-[url('/bg_ball.png')] bg-cover bg-center bg-red-500 min-h-143 rounded-tl-[20px] rounded-tr-[20px]">
+    <section className="mt-16 relative bg-[url('/bg_ball.png')] bg-cover bg-center bg-red-500 min-h-143 rounded-tl-[20px] rounded-tr-[20px]">
       <div className=" relative z-10 bg-[url('/bg_snow.png')] bg-cover bg-center min-h-143 flex flex-col items-center gap-3">
         <header className="mt-29 text-center">
           <p className="text-2xl text-white font-allura tracking-[5%]">
