@@ -7,7 +7,7 @@ import { Slider } from './components/Slider';
 function App() {
   return (
     <>
-      <div className="max-w-360 min-w-95">
+      <div className="max-w-360 min-w-95 m-auto">
         <Header />
         <HeroSection />
         <AboutSection />
