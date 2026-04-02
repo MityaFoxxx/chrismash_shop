@@ -11,7 +11,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-16 px-2 lg:px-21 bg-white shadow-sm">
+      <header className="max-w-360 min-w-95 fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-16 px-2 lg:px-21 bg-white shadow-sm">
         <div className="flex items-center gap-3 px-5">
           <div>
             <img className="h-6" src="snowflake.svg" alt="snowflake logo" />
