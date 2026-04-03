@@ -1,3 +1,5 @@
+import { ButtonGifts } from '../ButtonGifts/ButtonGifts';
+
 export const HeroSection = () => {
   return (
     <section className="mt-16 relative bg-[url('/bg_ball.png')] bg-cover bg-center bg-red-500 min-h-143 rounded-tl-[20px] rounded-tr-[20px]">
@@ -10,11 +12,7 @@ export const HeroSection = () => {
             Gift yourself the magic of new possibilities
           </h2>
         </header>
-
-        <button className="px-6 text-white  rounded-[20px] bg-[#181C29] hover:bg-[#151820] cursor-pointer w-58.75 h-14">
-          Explore Magical Gifts
-        </button>
-
+        <ButtonGifts />
         <footer className="px-4 text-center">
           <p className="text-2xl text-white font-allura tracking-[5%]">
             and Happy New Year

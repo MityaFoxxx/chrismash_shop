@@ -19,7 +19,7 @@ export const Card = ({ item }: CardProps) => {
         />
       </div>
 
-      <div className="px-5 pt-4.5 pb-10 flex flex-col gap-2.5 bg-white flex-grow">
+      <div className="px-5 pt-4.5 pb-10 flex flex-col gap-2.5 bg-white grow">
         <p
           className="text-[12px] font-semibold tracking-[5%] uppercase m-0"
           style={{
