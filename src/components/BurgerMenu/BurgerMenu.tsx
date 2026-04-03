@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useActiveSection, SECTIONS } from '../../hooks/useActiveSection';
 
 interface BurgerMenuProps {
   isMenuOpen: boolean;
@@ -7,6 +8,8 @@ interface BurgerMenuProps {
 }
 
 export const BurgerMenu = ({ isMenuOpen, toggleMenu }: BurgerMenuProps) => {
+  const { activeSection, scrollToSection, isGiftsPage } = useActiveSection();
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -63,32 +66,31 @@ export const BurgerMenu = ({ isMenuOpen, toggleMenu }: BurgerMenuProps) => {
         <nav className="flex flex-col items-center justify-center h-full gap-8 bg-white relative z-101">
           <NavLink
             to="/gifts"
-            className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors hover:text-blue-600"
+            className={`text-2xl font-semibold tracking-widest transition-colors hover:text-blue-600 ${
+              isGiftsPage
+                ? 'text-blue-600'
+                : 'text-gray-800'
+            }`}
             onClick={() => toggleMenu()}
           >
             GIFTS
           </NavLink>
-          <a
-            href="/#about-section"
-            className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors border-b border-gray-100 hover:text-blue-600"
-            onClick={() => toggleMenu()}
-          >
-            ABOUT
-          </a>
-          <a
-            href="/#best_section"
-            className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors border-b border-gray-100 hover:text-blue-600"
-            onClick={() => toggleMenu()}
-          >
-            BEST
-          </a>
-          <a
-            href="/#contacts-section"
-            className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors border-b border-gray-100 hover:text-blue-600"
-            onClick={() => toggleMenu()}
-          >
-            CONTACTS
-          </a>
+          {SECTIONS.map((section) => (
+            <button
+              key={section.id}
+              onClick={() => {
+                scrollToSection(section.id);
+                toggleMenu();
+              }}
+              className={`text-2xl font-semibold tracking-widest transition-colors border-b border-gray-100 hover:text-blue-600 ${
+                activeSection === section.id
+                  ? 'text-blue-600 border-blue-600'
+                  : 'text-gray-800'
+              }`}
+            >
+              {section.name}
+            </button>
+          ))}
         </nav>
       </div>
     </div>
