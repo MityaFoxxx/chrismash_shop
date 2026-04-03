@@ -87,6 +87,7 @@ export const tabColors = {
   'for harmony': '#FF43F7',
   'for work': '#4361FF',
 };
+export const tabs = ['all', 'for work', 'for health', 'for harmony'];
 
 export const giftsDataUI: GiftsData = [
   {
