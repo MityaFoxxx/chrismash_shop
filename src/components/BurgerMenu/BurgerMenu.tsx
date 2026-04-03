@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 interface BurgerMenuProps {
   isMenuOpen: boolean;
@@ -60,28 +61,31 @@ export const BurgerMenu = ({ isMenuOpen, toggleMenu }: BurgerMenuProps) => {
       >
         {/* Навигационное меню */}
         <nav className="flex flex-col items-center justify-center h-full gap-8 bg-white relative z-101">
-          <a
-            href="#"
+          <NavLink
+            to="/gifts"
             className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors hover:text-blue-600"
+            onClick={() => toggleMenu()}
           >
             GIFTS
-          </a>
+          </NavLink>
           <a
-            href="#"
+            href="/#about-section"
             className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors border-b border-gray-100 hover:text-blue-600"
+            onClick={() => toggleMenu()}
           >
             ABOUT
           </a>
           <a
-            href="#best_section"
+            href="/#best_section"
             className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors border-b border-gray-100 hover:text-blue-600"
             onClick={() => toggleMenu()}
           >
             BEST
           </a>
           <a
-            href="#"
+            href="/#contacts-section"
             className="text-2xl font-semibold tracking-widest text-gray-800 transition-colors border-b border-gray-100 hover:text-blue-600"
+            onClick={() => toggleMenu()}
           >
             CONTACTS
           </a>

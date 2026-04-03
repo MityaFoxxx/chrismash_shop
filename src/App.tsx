@@ -1,25 +1,17 @@
+import { Route, Routes } from 'react-router-dom';
+import { MainLayout } from './layouts';
+import { MainPage } from './pages/MainPage';
+import { GiftsPage } from './pages/GiftsPage';
 import './App.css';
-import { AboutSection } from './components/AboutSection';
-import { BestGiftSection } from './components/BestGiftSection';
-import { CTASection } from './components/CTASection';
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { HeroSection } from './components/HeroSection';
-import { Slider } from './components/Slider';
 
 function App() {
   return (
-    <>
-      <div className="max-w-360 min-w-95 m-auto">
-        <Header />
-        <HeroSection />
-        <AboutSection />
-        <Slider />
-        <BestGiftSection />
-        <CTASection />
-        <Footer />
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<MainPage />} />
+        <Route path="gifts" element={<GiftsPage />} />
+      </Route>
+    </Routes>
   );
 }
 

@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <section className="bg-white px-2 py-18 lg:px-20">
+    <section id="contacts-section" className="bg-white px-2 py-18 lg:px-20">
       <div className="flex flex-col gap-4 lg:flex-row">
         <div className="w-full flex flex-col items-center gap-3 bg-gray-200 rounded-2xl p-5 cursor-pointer hover:bg-gray-300">
           <img src="/footer-santa-claus.svg" alt="" className="w-20 h-20" />
