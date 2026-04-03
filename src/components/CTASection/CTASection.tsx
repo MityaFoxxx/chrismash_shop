@@ -2,8 +2,8 @@ import { ButtonGifts } from '../ButtonGifts/ButtonGifts';
 
 export const CTASection = () => {
   return (
-    <section className="bg-[url('/bg_forest.png')] bg-[size:400%] md:bg-[size:200%] lg:bg-[size:100%] lg:rounded-b-2xl  md:bg-bottom bg-center bg-no-repeat bg-red-500 h-[685px] pt-46 md:h-[768px] lg:h-[668px]  md:pt-55">
-      <div className=" bg-[url('/bg_snow.png')] bg-cover bg-center h-full px-2 md:w-[426px] md:m-auto">
+    <section className="bg-[url('/bg_forest.png')] bg-size-[400%] md:bg-size-[200%] lg:bg-size-[100%] lg:rounded-b-2xl bg-bottom bg-no-repeat bg-red-500 h-171.25 pt-46 md:h-192 lg:h-167 md:pt-55">
+      <div className=" bg-[url('/bg_snow.png')] bg-cover bg-center h-full px-2 md:w-106.5 md:m-auto">
         <header className="flex flex-col items-center gap-5">
           <h2 className="uppercase text-white text-2xl font-semibold tracking-[16%] text-center">
             Ready to start your journey to a better version of yourself?

@@ -9,7 +9,7 @@ export const Card = ({ item }: CardProps) => {
   return (
     <article
       key={item.id}
-      className="flex flex-col bg-gray-200 w-77.5 rounded-2xl overflow-hidden"
+      className="flex flex-col bg-gray-200 w-77.5 rounded-2xl cursor-pointer overflow-hidden hover:scale-102 transition-transform"
     >
       <div className="shrink-0">
         <img

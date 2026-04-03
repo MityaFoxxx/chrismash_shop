@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { giftsDataUI } from '../../shared/giftsData';
+import { giftsDataList } from '../../shared/giftsData';
 import { Card } from '../Card';
 
 export const BestGiftSection = () => {
-  const [giftsData] = useState(giftsDataUI);
+  const [giftsData] = useState(giftsDataList);
   return (
     <section id="best_section" className="bg-red-500 py-13 md:py-2">
       <header className="flex flex-col items-center justify-center gap-2.5">
