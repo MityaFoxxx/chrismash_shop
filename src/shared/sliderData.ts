@@ -12,6 +12,11 @@ export const sliderData = [
   {
     id: 3,
     title: 'love',
-    imgUrl: '/slider_christmas-tree-ball.png',
+    imgUrl: '/slider_snowman.png',
+  },
+  {
+    id: 4,
+    title: 'Dream',
+    imgUrl: '/slider_christmas-trees.png',
   },
 ];
