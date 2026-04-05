@@ -4,13 +4,14 @@ import { tabColors } from '../../shared/giftsData';
 interface CardProps {
   id: number;
   item: Gift;
+  hovered?: boolean;
   handleClickCard?: (item: Gift) => void;
 }
-export const Card = ({ item, handleClickCard }: CardProps) => {
+export const Card = ({ item, handleClickCard, hovered = true }: CardProps) => {
   return (
     <article
       key={item.id}
-      className="flex flex-col bg-gray-200 w-77.5 rounded-2xl cursor-pointer overflow-hidden hover:scale-102 transition-transform h-full"
+      className={`flex flex-col bg-gray-200 w-77.5 rounded-2xl overflow-hidden h-full select-none ${hovered ? 'cursor-pointer hover:scale-102 transition-transform' : ''}`}
       onClick={() => handleClickCard && handleClickCard(item)}
     >
       <div className="shrink-0">
