@@ -13,6 +13,7 @@ export const Slider = () => {
       prevIndex === 0 ? sliderItems.length - 1 : prevIndex - 1,
     );
   };
+
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === sliderItems.length - 1 ? 0 : prevIndex + 1,
@@ -34,41 +35,41 @@ export const Slider = () => {
             {`in the new ${new Date().getFullYear()}`}
           </h2>
         </header>
+
         <main className="px-4 relative">
-          <div className="overflow-hidden max-w-4xl mx-auto">
+          <div className="overflow-hidden w-full">
             <div
-              className="flex transition-transform duration-300 ease-in-out gap-40"
+              className="flex transition-transform duration-300 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {sliderItems.map((item) => (
-                <SliderItem item={item} />
+                <div key={item.id} className="w-full flex-shrink-0">
+                  <SliderItem item={item} />
+                </div>
               ))}
             </div>
           </div>
         </main>
-        <footer className="flex gap-5 justify-end">
+
+        <footer className="flex gap-5 justify-end mt-5">
           <button
-            className={`p-5.5 border rounded-[20px] border-white transition-colors ${
+            className={`p-3 sm:p-5.5 border rounded-[20px] border-white transition-colors ${
               currentIndex === 0
                 ? 'cursor-not-allowed opacity-50'
                 : 'cursor-pointer hover:bg-white hover:bg-opacity-20'
             }`}
-            onClick={currentIndex === 0 ? undefined : handlePrevClick}
+            onClick={handlePrevClick}
             disabled={currentIndex === 0}
           >
             <ArrowLeftIcon />
           </button>
           <button
-            className={`p-5.5 border rounded-[20px] border-white transition-colors ${
+            className={`p-3 sm:p-5.5 border rounded-[20px] border-white transition-colors ${
               currentIndex === sliderItems.length - 1
                 ? 'cursor-not-allowed opacity-50'
                 : 'cursor-pointer hover:bg-white hover:bg-opacity-20'
             }`}
-            onClick={
-              currentIndex === sliderItems.length - 1
-                ? undefined
-                : handleNextClick
-            }
+            onClick={handleNextClick}
             disabled={currentIndex === sliderItems.length - 1}
           >
             <ArrowRightIcon />

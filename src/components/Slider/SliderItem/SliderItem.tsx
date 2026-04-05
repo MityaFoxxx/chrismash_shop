@@ -8,17 +8,14 @@ interface SliderItemProps {
 
 export const SliderItem = ({ item }: SliderItemProps) => {
   return (
-    <div className="w-full flex items-center justify-center gap-6 ">
-      <p
-        key={item.id}
-        className="uppercase text-[80px] text-white text-center leading-tight"
-      >
+    <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 px-4">
+      <p className="uppercase text-4xl sm:text-6xl md:text-[80px] text-white text-center leading-tight">
         {item.title}
       </p>
       <img
         src={item.imgUrl}
         alt={item.title}
-        className="rounded-2xl max-w-md h-auto object-contain"
+        className="w-full max-w-[200px] sm:max-w-[300px] md:max-w-md h-auto object-contain rounded-2xl"
       />
     </div>
   );
