@@ -1,22 +1,35 @@
 import type { Gift } from '../../shared/giftsData';
 import { tabColors } from '../../shared/giftsData';
+import { memo } from 'react';
 
 interface CardProps {
   id: number;
   item: Gift;
   handleClickCard?: (item: Gift) => void;
 }
-export const Card = ({ item, handleClickCard }: CardProps) => {
+
+// Оптимизированный компонент Card с React.memo для предотвращения лишних рендеров
+export const Card = memo(({ item, handleClickCard }: CardProps) => {
   return (
     <article
       key={item.id}
       className="flex flex-col bg-gray-200 w-77.5 rounded-2xl cursor-pointer overflow-hidden hover:scale-102 transition-transform h-full"
       onClick={() => handleClickCard && handleClickCard(item)}
+      role="button"
+      tabIndex={0}
+      aria-label={`Подарок: ${item.title}. Категория: ${item.tab}. Нажмите для подробной информации`}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClickCard && handleClickCard(item);
+        }
+      }}
     >
       <div className="shrink-0">
         <img
           src={item.imgUrl}
-          alt={item.title}
+          alt={`${item.title} - подарок в категории ${item.tab}`}
+          loading="lazy"
           className="bg-gray-200 w-full aspect-[4/3] object-cover rounded-tl-2xl rounded-tr-2xl"
         />
       </div>
@@ -37,4 +50,6 @@ export const Card = ({ item, handleClickCard }: CardProps) => {
       </div>
     </article>
   );
-};
+});
+
+Card.displayName = 'Card';

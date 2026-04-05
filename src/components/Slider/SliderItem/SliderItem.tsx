@@ -15,6 +15,7 @@ export const SliderItem = ({ item }: SliderItemProps) => {
       <img
         src={item.imgUrl}
         alt={item.title}
+        loading="lazy"
         className="w-full max-w-[200px] sm:max-w-[300px] md:max-w-md h-auto object-contain rounded-2xl"
       />
     </div>

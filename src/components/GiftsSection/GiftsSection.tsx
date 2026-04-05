@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { giftsDataList, tabs, type Gift } from '../../shared/giftsData';
 import { Card } from '../Card';
 import { Modal } from '../Modal';
@@ -9,16 +9,19 @@ export const GiftsSection = () => {
   const [gift, setGift] = useState<Gift | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleClickCard = (item: Gift) => {
+  // Оптимизированная функция для обработки клика по карточке
+  const handleClickCard = useCallback((item: Gift) => {
     setGift(item);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const handleCloseModal = () => {
+  // Оптимизированная функция для закрытия модального окна
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
-  };
+  }, []);
 
-  const filterTabs = (tab: string) => {
+  // Оптимизированная функция для фильтрации вкладок
+  const filterTabs = useCallback((tab: string) => {
     switch (tab) {
       case 'for harmony':
         setGifts(giftsDataList.filter((gift) => gift.tab === 'for harmony'));
@@ -33,13 +36,17 @@ export const GiftsSection = () => {
         setGifts(giftsDataList);
         break;
     }
-  };
+  }, []);
+
+  // Мемоизация отфильтрованных подарков для предотвращения лишних рендеров
+  const filteredGifts = useMemo(() => gifts, [gifts]);
   return (
     <>
       <section className="mt-16 rounded-2xl bg-red-500 pb-25 overflow-hidden">
         <img
           src="/bg-garland.svg"
           alt="GiftsSection decoration image"
+          loading="lazy"
           className="w-full"
         />
 
@@ -64,7 +71,7 @@ export const GiftsSection = () => {
           <div className="grid grid-cols-1 gap-4 mt-4 mx-auto max-w-360 min-w-95">
             {/* Мобильные: 1 колонка (до 640px) */}
             <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {gifts.map((gift, index) => (
+              {filteredGifts.map((gift, index) => (
                 <div
                   key={gift.id}
                   data-aos="zoom-in"

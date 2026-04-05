@@ -27,6 +27,7 @@ export const AboutSection = () => {
             className="relative z-10 rounded-2xl h-132 w-full object-cover "
             src="/santa.png"
             alt="about section santa"
+            loading="lazy"
           />
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-red-500 md:hidden"></div>
         </footer>

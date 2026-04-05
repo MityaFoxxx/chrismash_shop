@@ -44,8 +44,21 @@ export default defineConfig({
     }),
   ],
   build: {
+    // Оптимизация для лучшего code splitting
     rollupOptions: {
       output: {
+        // Разделяем vendor зависимости от приложения
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor';
+            }
+            if (id.includes('aos')) {
+              return 'aos';
+            }
+            return 'vendor';
+          }
+        },
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.name?.split('.').at(1);
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType || '')) {
@@ -53,7 +66,13 @@ export default defineConfig({
           }
           return `assets/${extType}/[name]-[hash][extname]`;
         },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
+    // Включаем сжатие (используем terser)
+    minify: 'terser',
+    // Увеличиваем лимит для chunk splitting warning
+    chunkSizeWarningLimit: 1000,
   },
 });
