@@ -36,11 +36,7 @@ export const GiftsSection = () => {
   };
   return (
     <>
-      <section
-        className="mt-16 rounded-2xl bg-red-500 pb-25 overflow-hidden"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
+      <section className="mt-16 rounded-2xl bg-red-500 pb-25 overflow-hidden">
         <img
           src="/bg-garland.svg"
           alt="GiftsSection decoration image"
@@ -65,16 +61,22 @@ export const GiftsSection = () => {
           </div>
 
           {/* Адаптивная сетка от 380px до 1440px */}
-          <div className="grid grid-cols-1 gap-4 mt-4 mx-auto max-w-[1440px] min-w-[380px]">
+          <div className="grid grid-cols-1 gap-4 mt-4 mx-auto max-w-360 min-w-95">
             {/* Мобильные: 1 колонка (до 640px) */}
             <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {gifts.map((gift) => (
-                <Card
+              {gifts.map((gift, index) => (
+                <div
                   key={gift.id}
-                  id={gift.id}
-                  item={gift}
-                  handleClickCard={handleClickCard}
-                />
+                  data-aos="zoom-in"
+                  data-aos-duration="400"
+                  data-aos-delay={index * 100}
+                >
+                  <Card
+                    id={gift.id}
+                    item={gift}
+                    handleClickCard={handleClickCard}
+                  />
+                </div>
               ))}
             </div>
           </div>

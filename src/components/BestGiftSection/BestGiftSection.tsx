@@ -27,12 +27,7 @@ export const BestGiftSection = () => {
   console.log(bestGifts);
 
   return (
-    <section
-      id="best_section"
-      className="bg-red-500 py-13 md:py-2"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
+    <section id="best_section" className="bg-red-500 py-13 md:py-2">
       <header className="flex flex-col items-center justify-center gap-2.5">
         <p className="font-allura text-2xl tracking-[5%] text-white">
           Best Gifts
@@ -44,8 +39,15 @@ export const BestGiftSection = () => {
 
       <main className="bg-red-500 mt-5">
         <div className="flex flex-wrap justify-center items-stretch gap-3 max-w-7xl mx-auto">
-          {bestGifts.map((item) => (
-            <Card key={item.id} id={item.id} item={item} />
+          {bestGifts.map((item, index) => (
+            <div
+              key={item.id}
+              data-aos="zoom-in"
+              data-aos-duration="400"
+              data-aos-delay={index * 100}
+            >
+              <Card id={item.id} item={item} />
+            </div>
           ))}
         </div>
       </main>
