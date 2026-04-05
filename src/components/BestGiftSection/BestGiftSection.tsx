@@ -24,8 +24,6 @@ export const BestGiftSection = () => {
     return giftsDataList.filter((gift) => top4Ids.includes(gift.id));
   }, [giftsDataList]); // ✅ Зависимости пустые, т.к. giftsDataList статичен
 
-  console.log(bestGifts);
-
   return (
     <section id="best_section" className="bg-red-500 py-13 md:py-2">
       <header className="flex flex-col items-center justify-center gap-2.5">
