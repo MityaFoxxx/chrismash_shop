@@ -43,10 +43,22 @@ export const Footer = () => {
       </div>
       <div>
         <div className="flex items-center justify-center gap-8 pt-18">
-          <img src="/twitter.svg" alt="twitter social" />
-          <img src="/facebook.svg" alt="facebook social" />
-          <img src="/instagram.svg" alt="instagram social" />
-          <img src="/X.svg" alt="X social" />
+          <img
+            className="w-4.75 h-3.75"
+            src="/twitter.svg"
+            alt="twitter social"
+          />
+          <img
+            className="w-4.75 h-3.75"
+            src="/facebook.svg"
+            alt="facebook social"
+          />
+          <img
+            className="w-4.75 h-3.75"
+            src="/instagram.svg"
+            alt="instagram social"
+          />
+          <img className="w-4.75 h-3.75" src="/X.svg" alt="X social" />
         </div>
         <div className="flex flex-col items-center justify-center mt-4 gap-2">
           <p className="text-16px">{`© Copyright ${new Date().getFullYear()}, All Rights Reserved`}</p>
