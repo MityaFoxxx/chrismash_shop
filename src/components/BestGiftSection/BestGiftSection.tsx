@@ -44,7 +44,7 @@ export const BestGiftSection = () => {
               data-aos-duration="400"
               data-aos-delay={index * 100}
             >
-              <Card id={item.id} item={item} hovered={false} />
+              <Card id={item.id} item={item} />
             </div>
           ))}
         </div>
