@@ -6,9 +6,9 @@ export const MainLayout = () => {
   return (
     <div className="max-w-360 min-w-95 m-auto">
       <Header />
-      <>
+      <main className="bg-red-500">
         <Outlet />
-      </>
+      </main>
       <Footer />
     </div>
   );

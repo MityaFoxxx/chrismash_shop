@@ -21,7 +21,11 @@ export const Slider = () => {
 
   return (
     <div className="bg-[url('/bg_snow.png')] bg-cover bg-center min-h-122 bg-red-500 py-16 px-2 md:py-26 lg:px-19">
-      <section className="flex flex-col gap-5 justify-center">
+      <section
+        className="flex flex-col gap-5 justify-center"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <header className="flex flex-col items-center gap-3">
           <p className="text-2xl font-allura text-white tracking-[5%]">
             Become Happier!

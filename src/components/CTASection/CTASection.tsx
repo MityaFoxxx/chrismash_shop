@@ -58,7 +58,11 @@ export const CTASection = () => {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section className="bg-[url('/bg_forest.png')] bg-size-[400%] md:bg-size-[200%] lg:bg-size-[100%] lg:rounded-b-2xl bg-bottom bg-no-repeat bg-red-500 h-171.25 pt-46 md:h-192 lg:h-167 md:pt-55">
+    <section
+      className="bg-[url('/bg_forest.png')] bg-size-[400%] md:bg-size-[200%] lg:bg-size-[100%] lg:rounded-b-2xl bg-bottom bg-no-repeat bg-red-500 h-171.25 pt-46 md:h-192 lg:h-167 md:pt-55"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div className=" bg-[url('/bg_snow.png')] bg-cover bg-center h-full px-2 md:w-106.5 md:m-auto">
         <header className="flex flex-col items-center gap-5">
           <h2 className="uppercase text-white text-2xl font-semibold tracking-[16%] text-center">

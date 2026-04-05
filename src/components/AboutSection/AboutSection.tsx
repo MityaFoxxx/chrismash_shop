@@ -4,7 +4,11 @@ export const AboutSection = () => {
       id="about-section"
       className="bg-red-500 px-2 py-15 md:py-3 lg:px-[82px]"
     >
-      <section className="relative rounded-tl-2xl rounded-tr-2xl bg-white md:flex md:rounded-b-2xl lg:pl-[59px] lg:justify-between">
+      <section
+        className="relative rounded-tl-2xl rounded-tr-2xl bg-white md:flex md:rounded-b-2xl lg:pl-[59px] lg:justify-between"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <header className="flex flex-col  justify-center gap-5 px-5 py-14 md:w-138 lg:px-0 lg:pl-[2px] lg:w-[500px] lg:pr-[82px] md:py-0 md:px-15">
           <p className="font-allura tracking-[5%] text-red-700 text-2xl">
             About

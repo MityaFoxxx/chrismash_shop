@@ -36,7 +36,11 @@ export const GiftsSection = () => {
   };
   return (
     <>
-      <section className="mt-16 rounded-2xl bg-red-500 pb-25 overflow-hidden">
+      <section
+        className="mt-16 rounded-2xl bg-red-500 pb-25 overflow-hidden"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <img
           src="/bg-garland.svg"
           alt="GiftsSection decoration image"

@@ -27,7 +27,12 @@ export const BestGiftSection = () => {
   console.log(bestGifts);
 
   return (
-    <section id="best_section" className="bg-red-500 py-13 md:py-2">
+    <section
+      id="best_section"
+      className="bg-red-500 py-13 md:py-2"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <header className="flex flex-col items-center justify-center gap-2.5">
         <p className="font-allura text-2xl tracking-[5%] text-white">
           Best Gifts
