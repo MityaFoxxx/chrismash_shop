@@ -4,8 +4,9 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('@fontsource/montserrat/montserrat-v26-latin-300.woff2')
-    format('woff2');
+  src: local('Montserrat Light'),
+    local('Montserrat-Light'),
+    url('@fontsource/montserrat/montserrat-v26-latin-300.woff2') format('woff2');
 }
 
 @font-face {
@@ -13,8 +14,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('@fontsource/montserrat/montserrat-v26-latin-regular.woff2')
-    format('woff2');
+  src: local('Montserrat Regular'),
+    local('Montserrat-Regular'),
+    url('@fontsource/montserrat/montserrat-v26-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -22,8 +24,9 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('@fontsource/montserrat/montserrat-v26-latin-500.woff2')
-    format('woff2');
+  src: local('Montserrat Medium'),
+    local('Montserrat-Medium'),
+    url('@fontsource/montserrat/montserrat-v26-latin-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -31,8 +34,9 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('@fontsource/montserrat/montserrat-v26-latin-600.woff2')
-    format('woff2');
+  src: local('Montserrat SemiBold'),
+    local('Montserrat-SemiBold'),
+    url('@fontsource/montserrat/montserrat-v26-latin-600.woff2') format('woff2');
 }
 
 @font-face {
@@ -40,8 +44,9 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('@fontsource/montserrat/montserrat-v26-latin-700.woff2')
-    format('woff2');
+  src: local('Montserrat Bold'),
+    local('Montserrat-Bold'),
+    url('@fontsource/montserrat/montserrat-v26-latin-700.woff2') format('woff2');
 }
 
 @font-face {
@@ -49,8 +54,9 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('@fontsource/montserrat/montserrat-v26-latin-800.woff2')
-    format('woff2');
+  src: local('Montserrat ExtraBold'),
+    local('Montserrat-ExtraBold'),
+    url('@fontsource/montserrat/montserrat-v26-latin-800.woff2') format('woff2');
 }
 
 @font-face {
@@ -58,8 +64,9 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url('@fontsource/montserrat/montserrat-v26-latin-900.woff2')
-    format('woff2');
+  src: local('Montserrat Black'),
+    local('Montserrat-Black'),
+    url('@fontsource/montserrat/montserrat-v26-latin-900.woff2') format('woff2');
 }
 
 /* Allura - Latin */
@@ -68,5 +75,17 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('@fontsource/allura/allura-v21-latin-regular.woff2') format('woff2');
+  src: local('Allura Regular'),
+    local('Allura-Regular'),
+    url('@fontsource/allura/allura-v21-latin-regular.woff2') format('woff2');
+}
+
+/* Системные fallback шрифты для предотвращения скачков */
+@font-face {
+  font-family: 'Montserrat System Fallback';
+  src: local('Arial'), local('Helvetica'), local('sans-serif');
+  ascent-override: 95%;
+  descent-override: 30%;
+  line-gap-override: 10%;
+  size-adjust: 95%;
 }
